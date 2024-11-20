@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support - Nkuna</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Nkuna Support</h1>
+    <p>Your go-to resource for help and guidance</p>
+  </header>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>How can I start a business?</h3>
+      <p>Starting a business requires a strategic approach. Read more about it on <a href="https://en.wikipedia.org/wiki/Business_strategy" target="_blank">Business Strategy</a>.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I find house plans?</h3>
+      <p>Explore various house plans and get inspired. You can view more details on <a href="https://en.wikipedia.org/wiki/House_plan" target="_blank">House Plan</a>.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What should I consider when shopping for home items?</h3>
+      <p>When shopping for home improvement, consider quality, durability, and aesthetics. Learn more about this on <a href="https://en.wikipedia.org/wiki/Home_improvement" target="_blank">Home Improvement</a>.</p>
+    </div>
+  </section>
+
+  <!-- Search Section -->
+  <section id="search" class="section">
+    <h2>Search Our Knowledge Base</h2>
+    <input type="text" id="search-input" placeholder="Search for help..." oninput="searchFAQ()">
+    <ul id="search-results"></ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Nkuna.com | All Rights Reserved</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support - Nkuna</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Nkuna Support</h1>
+    <p>Your go-to resource for help and guidance</p>
+  </header>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>How can I start a business?</h3>
+      <p>Starting a business requires a strategic approach. Read more about it on <a href="https://en.wikipedia.org/wiki/Business_strategy" target="_blank">Business Strategy</a>.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I find house plans?</h3>
+      <p>Explore various house plans and get inspired. You can view more details on <a href="https://en.wikipedia.org/wiki/House_plan" target="_blank">House Plan</a>.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What should I consider when shopping for home items?</h3>
+      <p>When shopping for home improvement, consider quality, durability, and aesthetics. Learn more about this on <a href="https://en.wikipedia.org/wiki/Home_improvement" target="_blank">Home Improvement</a>.</p>
+    </div>
+  </section>
+
+  <!-- Search Section -->
+  <section id="search" class="section">
+    <h2>Search Our Knowledge Base</h2>
+    <input type="text" id="search-input" placeholder="Search for help..." oninput="searchFAQ()">
+    <ul id="search-results"></ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Nkuna.com | All Rights Reserved</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html><ALOASK-SEPARATE-EDITORS>/* Global Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #007bff;
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+}
+
+section {
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+}
+
+#search input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+#search-results li {
+  list-style-type: none;
+  padding: 5px 0;
+}
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}<ALOASK-SEPARATE-EDITORS>const faqs = [
+  {
+    question: "How can I start a business?",
+    answer: "Starting a business requires a strategic approach. Read more about it on Business Strategy.",
+    link: "https://en.wikipedia.org/wiki/Business_strategy"
+  },
+  {
+    question: "How do I find house plans?",
+    answer: "Explore various house plans and get inspired. You can view more details on House Plan.",
+    link: "https://en.wikipedia.org/wiki/House_plan"
+  },
+  {
+    question: "What should I consider when shopping for home items?",
+    answer: "When shopping for home improvement, consider quality, durability, and aesthetics. Learn more about this on Home Improvement.",
+    link: "https://en.wikipedia.org/wiki/Home_improvement"
+  }
+];
+
+function searchFAQ() {
+  const query = document.getElementById("search-input").value.toLowerCase();
+  const results = faqs.filter(faq => faq.question.toLowerCase().includes(query));
+  const resultsContainer = document.getElementById("search-results");
+
+  resultsContainer.innerHTML = '';
+  results.forEach(faq => {
+    const li = document.createElement('li');
+    li.innerHTML = `<strong>${faq.question}</strong>: <a href="${faq.link}" target="_blank">${faq.answer}</a>`;
+    resultsContainer.appendChild(li);
+  });
+}
